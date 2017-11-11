@@ -8,24 +8,31 @@ import {Component, OnInit} from '@angular/core';
   //Третий вариант использования селектора - через class элемента. В разметке выглядит как: <div class="app-car"></div>
   //selector: '.app-car'
 
-  // templateUrl: './cars.component.html',
-  template: `
-    <h2>Single car</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, sapiente?</p>
-  `,
-  // styleUrls: ['./car.component.css'],
-  styles: [`
-    h2 {
-      color: aqua;
-    }
-  `]
+  templateUrl: './car.component.html',
+  // template: `
+  //   <h2>Single car</h2>
+  //   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, sapiente?</p>
+  // `,
+  styleUrls: ['./car.component.css'],
+  // styles: [`
+  //   h2 {
+  //     color: aqua;
+  //   }
+  // `]
 })
 export class CarComponent implements OnInit {
+
+  carName:string = 'Ford';
+  carYear:number = 2015;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  getName() {
+    return this.carName;
   }
 
 }
