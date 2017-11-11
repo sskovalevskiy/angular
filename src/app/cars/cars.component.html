@@ -11,3 +11,6 @@
 <!--Второй способ получения значения из поля - через #myInput -->
 <input type="text" class="form-control" #myInput (input)="onInputValue(myInput.value)">
 <p>{{inputText}}</p>
+
+<input type="text" class="form-control" (keyup)="onKeyUp($event)">
+<p>{{inputTextAfterEnter}}</p>

@@ -11,6 +11,7 @@ export class CarsComponent {
   addCarStatus: string = '';
   inputEvent: string = '';
   inputText: string = '';
+  inputTextAfterEnter: string = '';
 
   constructor() {
     setTimeout(() => {
@@ -27,7 +28,13 @@ export class CarsComponent {
     this.inputEvent = (<HTMLInputElement> event.target).value;
   }
 
-  onInputValue(value){
+  onInputValue(value) {
     this.inputText = value;
+  }
+
+  onKeyUp(event) {
+    if (event.code === 'Enter') {
+      this.inputTextAfterEnter = event.target.value;
+    }
   }
 }
