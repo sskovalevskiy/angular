@@ -12,5 +12,6 @@
 <input type="text" class="form-control" #myInput (input)="onInputValue(myInput.value)">
 <p>{{inputText}}</p>
 
-<input type="text" class="form-control" (keyup)="onKeyUp($event)">
+<!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">-->
+<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
 <p>{{inputTextAfterEnter}}</p>

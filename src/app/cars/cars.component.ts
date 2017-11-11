@@ -33,8 +33,10 @@ export class CarsComponent {
   }
 
   onKeyUp(event) {
-    if (event.code === 'Enter') {
-      this.inputTextAfterEnter = event.target.value;
-    }
+    //Для первого(закоментированного) варианта обработки ввода по нажатию Enter в шаблоне
+    // if (event.code === 'Enter') {
+    //   this.inputTextAfterEnter = event.target.value;
+    // }
+    this.inputTextAfterEnter = event.target.value;
   }
 }
