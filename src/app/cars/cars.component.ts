@@ -9,6 +9,7 @@ export class CarsComponent {
 
   canAddCar: boolean = false;
   addCarStatus: string = '';
+  inputEvent: string = '';
   inputText: string = '';
 
   constructor() {
@@ -21,8 +22,12 @@ export class CarsComponent {
     this.addCarStatus = 'Машина добавлена!';
   }
 
-  onInput(event: Event) {
+  onInputEvent(event: Event) {
     console.log(event);
-    this.inputText = (<HTMLInputElement> event.target).value;
+    this.inputEvent = (<HTMLInputElement> event.target).value;
+  }
+
+  onInputValue(value){
+    this.inputText = value;
   }
 }

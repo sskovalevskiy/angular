@@ -5,5 +5,9 @@
 <app-car></app-car>
 <app-car></app-car>
 
-<input type="text" class="form-control" (input)="onInput($event)">
+<input type="text" class="form-control" (input)="onInputEvent($event)">
+<p>{{inputEvent}}</p>
+
+<!--Второй способ получения значения из поля - через #myInput -->
+<input type="text" class="form-control" #myInput (input)="onInputValue(myInput.value)">
 <p>{{inputText}}</p>
