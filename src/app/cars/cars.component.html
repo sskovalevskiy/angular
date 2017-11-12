@@ -33,3 +33,8 @@
     <b>{{i}} - {{item.id}} - <i>{{item.name}}</i></b>
   </li>
 </ul>
+<ul>
+  <li *ngFor="let car of cars; let i = index">
+    <div [ngStyle]="{backgroundColor: (i+1) % 2 === 0? 'grey':'black', color: 'white'}"><b>{{i}} - <i>{{car}}</i></b></div>
+  </li>
+</ul>

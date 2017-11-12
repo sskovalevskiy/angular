@@ -16,7 +16,7 @@ export class CarsComponent {
   carName: string = '';
   items = [{id:3, name: 'item 1'},{id:6, name: 'item 2'},{id:9, name: 'item 3'}];
 
-  cars: string[] = ['Ford', 'Audi', 'BMW'];
+  cars: string[] = ['Ford', 'Audi', 'BMW','Lada','Mazda','VW'];
 
   constructor() {
     setTimeout(() => {
