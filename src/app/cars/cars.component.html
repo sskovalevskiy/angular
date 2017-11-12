@@ -5,6 +5,17 @@
 <app-car></app-car>
 <app-car></app-car>
 
+<input type="text" class="form-comtrol" [(ngModel)]="carName">
+<button class="btn btn-primary" (click)="addCar2()">Добавить машину</button>
+<!-- Первый вариант -->
+<p *ngIf="!carWasAdded">Машина не добавлена</p>
+<p *ngIf="carWasAdded">Машина добавлена</p>
+<!-- Второй вариант -->
+<p *ngIf="!carWasAdded; else successStatus">Машина не добавлена</p>
+<ng-template #successStatus>
+  <p>Машина добавлена</p>
+</ng-template>
+
 <input type="text" class="form-control" (input)="onInputEvent($event)">
 <p>{{inputEvent}}</p>
 
@@ -14,4 +25,8 @@
 
 <!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">-->
 <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
+<!-- Пример двустороннего связывания с помощью [(ngModel)]; необходимо добавить FormsModule в app.module для работы ngModel-->
+<input type="text" class="form-control" [(ngModel)]="inputTextAfterEnter">
 <p>{{inputTextAfterEnter}}</p>
+
+
