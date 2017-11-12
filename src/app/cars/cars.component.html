@@ -2,8 +2,7 @@
 <button [disabled]="!canAddCar" class="btn btn-primary" (click)="addCar()">Добавить машину</button>
 <p>{{addCarStatus}}</p>
 <hr>
-<app-car></app-car>
-<app-car></app-car>
+<app-car *ngFor="let car of cars"></app-car>
 
 <input type="text" class="form-comtrol" [(ngModel)]="carName">
 <button class="btn btn-primary" (click)="addCar2()">Добавить машину</button>
@@ -29,4 +28,8 @@
 <input type="text" class="form-control" [(ngModel)]="inputTextAfterEnter">
 <p>{{inputTextAfterEnter}}</p>
 
-
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    <b>{{i}} - {{item.id}} - <i>{{item.name}}</i></b>
+  </li>
+</ul>

@@ -13,6 +13,10 @@ export class CarsComponent {
   inputEvent: string = '';
   inputText: string = '';
   inputTextAfterEnter: string = 'Введите Ваш вопрос';
+  carName: string = '';
+  items = [{id:3, name: 'item 1'},{id:6, name: 'item 2'},{id:9, name: 'item 3'}];
+
+  cars: string[] = ['Ford', 'Audi', 'BMW'];
 
   constructor() {
     setTimeout(() => {
@@ -22,6 +26,8 @@ export class CarsComponent {
 
   addCar() {
     this.addCarStatus = 'Машина добавлена!';
+    this.cars.push(this.carName);
+    this.carName = '';
   }
 
   addCar2() {
