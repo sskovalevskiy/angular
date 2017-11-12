@@ -14,9 +14,9 @@ export class CarsComponent {
   inputText: string = '';
   inputTextAfterEnter: string = 'Введите Ваш вопрос';
   carName: string = '';
-  items = [{id:3, name: 'item 1'},{id:6, name: 'item 2'},{id:9, name: 'item 3'}];
+  items = [{id: 3, name: 'item 1'}, {id: 6, name: 'item 2'}, {id: 9, name: 'item 3'}];
 
-  cars: string[] = ['Ford', 'Audi', 'BMW','Lada','Mazda','VW'];
+  cars: string[] = ['Ford', 'Audi', 'BMW', 'MAN', 'Mazda', 'Volkswagen', 'Bentley'];
 
   constructor() {
     setTimeout(() => {
@@ -49,5 +49,9 @@ export class CarsComponent {
     //   this.inputTextAfterEnter = event.target.value;
     // }
     this.inputTextAfterEnter = event.target.value;
+  }
+
+  setBigCarText(car: string) {
+    return car.length > 4 ? true : false;
   }
 }

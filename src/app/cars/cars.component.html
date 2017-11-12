@@ -35,6 +35,9 @@
 </ul>
 <ul>
   <li *ngFor="let car of cars; let i = index">
-    <div [ngStyle]="{backgroundColor: (i+1) % 2 === 0? 'grey':'black', color: 'white'}"><b>{{i}} - <i>{{car}}</i></b></div>
+    <div
+      [ngStyle]="{backgroundColor: (i+1) % 2 === 0? 'grey':'black', color: 'white'}"
+      [ngClass]="{'big-text': setBigCarText(car)}"
+    ><b>{{i}} - <i>{{car}}</i></b></div>
   </li>
 </ul>
