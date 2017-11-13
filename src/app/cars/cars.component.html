@@ -41,3 +41,12 @@
     ><b>{{i}} - <i>{{car}}</i></b></div>
   </li>
 </ul>
+
+<hr>
+<ul>
+  <li *ngFor="let date of dates; let i = index">
+    <div><b>{{i+1}} - {{ date | date}}</b></div>
+  </li>
+</ul>
+
+<div>{{dates[0].toDateString()| uppercase}}</div>

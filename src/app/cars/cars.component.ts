@@ -15,6 +15,12 @@ export class CarsComponent {
   inputTextAfterEnter: string = 'Введите Ваш вопрос';
   carName: string = '';
   items = [{id: 3, name: 'item 1'}, {id: 6, name: 'item 2'}, {id: 9, name: 'item 3'}];
+  dates = [
+    new Date(2015, 3, 3),
+    new Date(2000, 3, 7),
+    new Date(2012, 3, 11),
+    new Date(2017, 12, 3)
+  ];
 
   cars: string[] = ['Ford', 'Audi', 'BMW', 'MAN', 'Mazda', 'Volkswagen', 'Bentley'];
 
