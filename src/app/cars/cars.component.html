@@ -1,52 +1,9 @@
 <!--При использовании квадратных скобок [disabled] Angular будет постоянно следить за значением данного аттрибута-->
-<button [disabled]="!canAddCar" class="btn btn-primary" (click)="addCar()">Добавить машину</button>
-<p>{{addCarStatus}}</p>
-<hr>
-<app-car *ngFor="let car of cars"></app-car>
-
 <input type="text" class="form-comtrol" [(ngModel)]="carName">
-<button class="btn btn-primary" (click)="addCar2()">Добавить машину</button>
-<!-- Первый вариант -->
-<p *ngIf="!carWasAdded">Машина не добавлена</p>
-<p *ngIf="carWasAdded">Машина добавлена</p>
-<!-- Второй вариант -->
-<p *ngIf="!carWasAdded; else successStatus">Машина не добавлена</p>
-<ng-template #successStatus>
-  <p>Машина добавлена</p>
-</ng-template>
-
-<input type="text" class="form-control" (input)="onInputEvent($event)">
-<p>{{inputEvent}}</p>
-
-<!--Второй способ получения значения из поля - через #myInput -->
-<input type="text" class="form-control" #myInput (input)="onInputValue(myInput.value)">
-<p>{{inputText}}</p>
-
-<!--<input type="text" class="form-control" (keyup)="onKeyUp($event)">-->
-<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)">
-<!-- Пример двустороннего связывания с помощью [(ngModel)]; необходимо добавить FormsModule в app.module для работы ngModel-->
-<input type="text" class="form-control" [(ngModel)]="inputTextAfterEnter">
-<p>{{inputTextAfterEnter}}</p>
-
-<ul>
-  <li *ngFor="let item of items; let i = index">
-    <b>{{i}} - {{item.id}} - <i>{{item.name}}</i></b>
-  </li>
-</ul>
-<ul>
-  <li *ngFor="let car of cars; let i = index">
-    <div
-      [ngStyle]="{backgroundColor: (i+1) % 2 === 0? 'grey':'black', color: 'white'}"
-      [ngClass]="{'big-text': setBigCarText(car)}"
-    ><b>{{i}} - <i>{{car}}</i></b></div>
-  </li>
-</ul>
-
+<input type="text" class="form-comtrol" [(ngModel)]="carYear">
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
 <hr>
-<ul>
-  <li *ngFor="let date of dates; let i = index">
-    <div><b>{{i+1}} - {{ date | date}}</b></div>
-  </li>
-</ul>
 
-<div>{{dates[0].toDateString()| uppercase}}</div>
+<!-- carItem - то свойство, за которым будет следить компонент, чтобы знать, откуда брать данные -->
+<app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+

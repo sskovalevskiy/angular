@@ -1,38 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-car',
-  //Другой вариант использования селектора как атрибута другого тега. В данном случае в HTML-разметке вызывается через
-  //добавление аттрибута обычного тега, например <div app-car></div>
-  // selector: '[app-car]',
-  //Третий вариант использования селектора - через class элемента. В разметке выглядит как: <div class="app-car"></div>
-  //selector: '.app-car'
-
   templateUrl: './car.component.html',
-  // template: `
-  //   <h2>Single car</h2>
-  //   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, sapiente?</p>
-  // `,
-  styleUrls: ['./car.component.css'],
-  // styles: [`
-  //   h2 {
-  //     color: aqua;
-  //   }
-  // `]
+  styleUrls: ['./car.component.css']
 })
-export class CarComponent implements OnInit {
+export class CarComponent {
 
-  carName:string = 'Ford';
-  carYear:number = 2015;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  getName() {
-    return this.carName;
-  }
+  //Можно из html-шаблона передавать само свойство carItem,
+  // а можно его указать в alias(названия того параметра, который мы ожидаем) аннотации @Input
+  // @Input() carItem: { name: string, year: number }
+  @Input('carItem') car: { name: string, year: number }
 
 }
