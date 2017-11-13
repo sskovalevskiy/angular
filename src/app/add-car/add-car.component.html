@@ -1,3 +1,5 @@
-<p>
-  add-car works!
-</p>
+<!--При использовании квадратных скобок [disabled] Angular будет постоянно следить за значением данного аттрибута-->
+<input type="text" class="form-comtrol" [(ngModel)]="carName">
+<input type="text" class="form-comtrol" [(ngModel)]="carYear">
+<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<hr>
