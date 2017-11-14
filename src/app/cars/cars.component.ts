@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css'],
   //ViewEncapsulation.None/Native - для того, чтобы стили применялись глобально ко всем компонентам
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class CarsComponent {
 
