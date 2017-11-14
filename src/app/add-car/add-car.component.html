@@ -3,5 +3,7 @@
 <input type="text" class="form-comtrol" [(ngModel)]="carYear">
 <!--Создание локальной референции к элементу(локального названия элемента) с помощью #anyName и передачи его в компонент через метод addCar()-->
 <input type="text" class="form-comtrol" #carModelInput>
+<input type="text" class="form-comtrol" #carPriceInput>
+
 <button class="btn btn-primary" (click)="addCar(carModelInput)">Добавить машину</button>
 <hr>
