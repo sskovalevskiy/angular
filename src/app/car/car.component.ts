@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input} from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -11,5 +11,6 @@ export class CarComponent {
   // а можно его указать в alias(названия того параметра, который мы ожидаем) аннотации @Input
   // @Input() carItem: { name: string, year: number }
   @Input('carItem') car: { name: string, model: string, year: number, price: number }
+  @ContentChild('carHeading') carHeading:ElementRef;
 
 }
