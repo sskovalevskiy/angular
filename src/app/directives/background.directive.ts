@@ -1,4 +1,4 @@
-import {Directive, ElementRef, OnInit, Renderer2} from "@angular/core";
+import {Directive, ElementRef, HostListener, OnInit, Renderer2} from "@angular/core";
 
 @Directive({
   selector: '[appBackground]'
@@ -15,5 +15,15 @@ export class BackgroundDirective implements OnInit {
 
     const {nativeElement} = this.element;
     this.renderer.addClass(nativeElement, 'white-text')
+  }
+
+  @HostListener('mouseenter', ['$event']) mouseEnter(event: Event){
+    console.log(event);
+    this.renderer.setStyle(this.element.nativeElement, 'background-color', 'yellow');
+  }
+
+  @HostListener('mouseleave', ['$event']) mouseLeave(event: Event){
+    console.log(event);
+    this.renderer.setStyle(this.element.nativeElement, 'background-color', 'violet');
   }
 }
