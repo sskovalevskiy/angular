@@ -10,6 +10,7 @@ export class AppComponent {
   items = [1, 2, 3, 4, 5];
   current = 1;
 
+
   onClick(number: number){
     this.current = number;
   }

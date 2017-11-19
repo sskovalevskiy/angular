@@ -9,6 +9,7 @@ import { AddCarComponent } from './add-car/add-car.component';
 import {BackgroundDirective} from "./directives/background.directive";
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import {MyComponent} from "./my/my.component";
+import {PowPipe} from "./pow.pipe";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {MyComponent} from "./my/my.component";
     AddCarComponent,
     BackgroundDirective,
     MyDirectiveDirective,
-    MyComponent
+    MyComponent,
+    PowPipe
   ],
   imports: [
     BrowserModule,
