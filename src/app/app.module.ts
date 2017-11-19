@@ -10,6 +10,7 @@ import {BackgroundDirective} from "./directives/background.directive";
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import {MyComponent} from "./my/my.component";
 import {PowPipe} from "./pow.pipe";
+import { MyTestPipePipe } from './my-test-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {PowPipe} from "./pow.pipe";
     BackgroundDirective,
     MyDirectiveDirective,
     MyComponent,
-    PowPipe
+    PowPipe,
+    MyTestPipePipe
   ],
   imports: [
     BrowserModule,
