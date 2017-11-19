@@ -37,7 +37,7 @@
   </div>
 
   <div class="col-xs-8 col-xs-offset-2">
-    <app-add-carr (onCarrAdd)="addCarToList($event)"></app-add-carr>
+    <app-add-carr></app-add-carr>
     <div class="list-group">
       <app-carr *ngFor="let car of cars" [carr]="car"></app-carr>
     </div>

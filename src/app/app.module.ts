@@ -13,6 +13,7 @@ import {PowPipe} from "./pow.pipe";
 import { MyTestPipePipe } from './my-test-pipe.pipe';
 import { CarrComponent } from './carr/carr.component';
 import { AddCarrComponent } from './add-carr/add-carr.component';
+import {CarrsService} from "./carrs.service";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddCarrComponent } from './add-carr/add-carr.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CarrsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

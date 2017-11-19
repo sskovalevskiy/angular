@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {CarrsService} from "../carrs.service";
 
 @Component({
   selector: 'app-add-carr',
@@ -7,11 +8,13 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class AddCarrComponent{
 
-  @Output() onCarrAdd = new EventEmitter<String>();
   carrName = '';
 
+  constructor(private service: CarrsService){
+  }
+
   addCarr(){
-    this.onCarrAdd.emit(this.carrName);
+    this.service.addCar(this.carrName);
     this.carrName = '';
   }
 }
