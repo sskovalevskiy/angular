@@ -24,4 +24,15 @@
     <h2>{{current}}</h2>
     <h2>{{current | appPow:3}}</h2>
   </div>
+  <hr>
+
+  <div class="col-xs-8 col-xs-offset-2">
+    <input type="text" class="form-control" [(ngModel)]="searchCar">
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars  | myTestPipe:searchCar ; let i = index">
+        <b>{{i+1}}</b> {{car.name}}, Год: <b> {{car.year}}</b>
+      </li>
+    </ul>
+  </div>
 </div>
