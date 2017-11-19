@@ -12,16 +12,24 @@ export class AppComponent {
   current = 1;
   searchCar: string = '';
   cars = [
-    {name: 'Ford', year: 2015},
-    {name: 'Audi', year: 2013},
-    {name: 'BMW', year: 2015},
-    {name: 'MAN', year: 2016},
-    {name: 'Mazda', year: 2017}
+    {name: 'Ford', year: 2015, isSold:false},
+    {name: 'Audi', year: 2013, isSold:false},
+    {name: 'BMW', year: 2015, isSold:true},
+    {name: 'MAN', year: 2016, isSold:true},
+    {name: 'Mazda', year: 2017, isSold:false}
   ];
 
   asyncTitle = Observable.of('Async title 3 seconds').delay(3000);
 
   onClick(number: number) {
     this.current = number;
+  }
+
+  addCarToList(carName: string){
+    this.cars.push({
+      name: carName,
+      year: 2017,
+      isSold: false
+    });
   }
 }
