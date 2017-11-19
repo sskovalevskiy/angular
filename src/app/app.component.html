@@ -24,7 +24,6 @@
     <h2>{{current}}</h2>
     <h2>{{current | appPow:3}}</h2>
   </div>
-  <hr>
 
   <div class="col-xs-8 col-xs-offset-2">
     <h1>{{ asyncTitle | async}}</h1>
@@ -35,5 +34,12 @@
         <b>{{i+1}}</b> {{car.name}}, Год: <b> {{car.year}}</b>
       </li>
     </ul>
+  </div>
+
+  <div class="col-xs-8 col-xs-offset-2">
+    <app-add-carr (onCarAdd)="addCarToList($event)"></app-add-carr>
+    <div class="list-group">
+      <app-carr *ngFor="let car of cars" [carr]="car"></app-carr>
+    </div>
   </div>
 </div>

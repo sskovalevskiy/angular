@@ -11,6 +11,8 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
 import {MyComponent} from "./my/my.component";
 import {PowPipe} from "./pow.pipe";
 import { MyTestPipePipe } from './my-test-pipe.pipe';
+import { CarrComponent } from './carr/carr.component';
+import { AddCarrComponent } from './add-carr/add-carr.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MyTestPipePipe } from './my-test-pipe.pipe';
     MyDirectiveDirective,
     MyComponent,
     PowPipe,
-    MyTestPipePipe
+    MyTestPipePipe,
+    CarrComponent,
+    AddCarrComponent
   ],
   imports: [
     BrowserModule,
