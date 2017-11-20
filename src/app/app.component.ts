@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable'
 import {CarrsService} from "./carrs.service";
+import {NgForm} from "@angular/forms";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,5 +28,9 @@ export class AppComponent implements OnInit {
 
   onClick(number: number) {
     this.current = number;
+  }
+
+  submitForm(form: NgForm){
+    console.log('Submitted!', form)
   }
 }
