@@ -14,6 +14,7 @@ import { MyTestPipePipe } from './my-test-pipe.pipe';
 import { CarrComponent } from './carr/carr.component';
 import { AddCarrComponent } from './add-carr/add-carr.component';
 import {CarrsService} from "./carrs.service";
+import {ConsoleService} from "./console.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import {CarrsService} from "./carrs.service";
     BrowserModule,
     FormsModule
   ],
-  providers: [CarrsService],
+  providers: [CarrsService, ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
