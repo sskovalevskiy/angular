@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   searchCar: string = '';
   asyncTitle = Observable.of('Async title 3 seconds').delay(3000);
   cars = [];
+  answers = [{type:'yes', text:'Да'},{type:'no', text:'Нет'}];
 
   constructor(private service: CarrsService) {
 
