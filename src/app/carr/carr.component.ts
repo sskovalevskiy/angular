@@ -18,7 +18,7 @@ export class CarrComponent {
   getClass() {
     return {
       'list-group-item-success': !this.carr.isSold,
-      'list-group-item-danger': this.carr.isSold,
+      'list-group-item-danger' : this.carr.isSold,
       'list-group-item': true
     }
   }

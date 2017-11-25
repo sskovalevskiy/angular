@@ -7,7 +7,6 @@ import {CarrsService} from "../carrs.service";
   styleUrls: ['./add-carr.component.css']
 })
 export class AddCarrComponent{
-
   carrName = '';
 
   constructor(private service: CarrsService){
@@ -15,6 +14,8 @@ export class AddCarrComponent{
 
   addCarr(){
     this.service.addCar(this.carrName);
-    this.carrName = '';
   }
+
+  @Output() onCarrAdd = new EventEmitter<String>();
+
 }

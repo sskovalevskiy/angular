@@ -14,8 +14,15 @@ export class AppComponent implements OnInit {
   items = [1, 2, 3, 4, 5];
   current = 1;
   searchCar: string = '';
+
+  cars = [
+    {name: 'Ford', year: 2015, isSold:false},
+    {name: 'Audi', year: 2013, isSold:false},
+    {name: 'BMW', year: 2015, isSold:true},
+    {name: 'MAN', year: 2016, isSold:true},
+    {name: 'Mazda', year: 2017, isSold:false}
+  ];
   asyncTitle = Observable.of('Async title 3 seconds').delay(3000);
-  cars = [];
   answers = [{type:'yes', text:'Да'},{type:'no', text:'Нет'}];
 
   constructor(private service: CarrsService) {
@@ -30,7 +37,15 @@ export class AppComponent implements OnInit {
     this.current = number;
   }
 
-  submitForm(form: NgForm){
+  submitForm(form: NgForm) {
     console.log('Submitted!', form)
+  }
+
+  addCarToList(carName: string){
+    this.cars.push({
+      name: carName,
+      year: 2017,
+      isSold: false
+    });
   }
 }
